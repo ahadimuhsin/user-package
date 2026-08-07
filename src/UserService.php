@@ -8,6 +8,12 @@ class UserService extends ApiService
 {
     public function __construct()
     {
-        $this->endpoint = env('USER_MS') . '/api';
+        $userMsEnv = env('USERS_MS');
+
+        if ($userMsEnv === '') {
+            throw new \Exception('Value USERS_MS is not set');
+        }
+
+        $this->endpoint = $usersMsEnv . '/api';
     }
 }
