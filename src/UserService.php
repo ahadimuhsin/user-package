@@ -8,7 +8,7 @@ class UserService extends ApiService
 {
     public function __construct()
     {
-        $userMsUrl = env('USERS_MS');
+        $usersMsUrl = env('USERS_MS');
         
         if (!is_string($usersMsUrl) || trim($usersMsUrl) === '') {
             throw new \RuntimeException('USERS_MS is not configured');
