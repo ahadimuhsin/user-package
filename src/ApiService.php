@@ -12,7 +12,7 @@ abstract class ApiService
     {
         $response = $this->getRequest($method, $path, $data);
 
-        if ($response->ok()){
+        if ($response->succesful()){
             return $response->json();
         }
 
